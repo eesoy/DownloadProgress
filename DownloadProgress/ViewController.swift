@@ -40,7 +40,7 @@ class ViewController: UIViewController, URLSessionDownloadDelegate {
         let fileManager = FileManager()
         
         //기존 파일 존재시 파일 삭제 후 다운로드받은 파일 이동
-        if fileManager.fileExists(atPath: destPath.absoluteString) {
+        if fileManager.fileExists(atPath: destPath.path) {
             do {
              try fileManager.removeItem(at: destPath)
             } catch let error {
